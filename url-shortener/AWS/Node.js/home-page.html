@@ -1,0 +1,44 @@
+<html>
+<title>Generic URL Shortening Service</title>
+
+<head>
+    <title>test</title>
+    <script language="JavaSCript">
+        let shorten = function(longUrlTextAreaId, resultPId) {
+            let longUrlTextArea = document.getElementById(longUrlTextAreaId);
+            let longUrl = longUrlTextArea.value;
+            let siteUrl;
+            fetch('/items', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({'longUrl': longUrl})
+            }).then(response => {
+                siteUrl = response.url;
+                return response.json()
+            }).then(data =>{
+                console.log(data);
+                let shortUrlId = data['id'];
+                let resultP = document.getElementById(resultPId);
+                resultP.innerHTML = 
+                    `The shortened URL is: 
+                        <a href="${siteUrl}/${shortUrlId}">
+                        ${siteUrl}/${shortUrlId}</a>`;
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Generic URL Shortener</h1>
+    <input type="textarea" id="longUrlTextAreaId" rows="40" cols="80" />
+    <button onclick='shorten("longUrlTextAreaId", "resultPId")'>
+        Shorten
+    </button>
+    <div id='shortUrlDivId'>
+        <p id='resultPId' />
+    </div>
+</body>
+
+</html>
