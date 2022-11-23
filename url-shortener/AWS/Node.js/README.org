@@ -10,8 +10,11 @@
   shorteners are a simple web application, so they are a popular
   choice for the first example in system design guides.  The
   high-level design for our URL shortener is in the diagram below.
-
   
+  #+CAPTION: URL Shortener Architecture
+  #+NAME:   fig:shortener-arch
+  [[./url-shortener-architecture.png]]
+
 
   When you are ready for an adventure, follow these steps to set up a
   URL shortening service in Amazon Web Services (AWS) using Lambda
