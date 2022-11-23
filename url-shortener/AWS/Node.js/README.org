@@ -1,20 +1,53 @@
-* Url Shortener
-  Follow these steps to set up a URL shortening service in Amazon Web
-  Services (AWS) using Lambda functions and DynamoDB.  There are three
-  layers to the implementation.  We build the implementation one layer
-  at a time.
+* URL Shortener
+  [[https://kinsta.com/knowledgebase/what-is-a-url/][A Universal Resource Locator]] (URL) shortener is a web application
+  that provides a service for creating and translating short URLs into
+  longer URLs.  URL shorteners are useful in settings such as on-line
+  discussion forums.  For example, forum participants wishing to share
+  links to long URLs that would otherwise clutter their discussion can
+  generate short URLs from long URLs with a URL shortener.  They can
+  then copy and paste short URLs into their comments and the URL
+  shortener will resolve the short URLs into longer URLs.  URL
+  shorteners are a simple web application, so they are a popular
+  choice for the first example in system design guides.  The
+  high-level design for our URL shortener is in the diagram below.
 
-  The first layer is the persistence, or database layer.  Here, we use
-  DynamoDB for the persistence layer.  So, we need to create a
-  DynamoDB table. In order to do that please log in to the AWS main
-  console, and search for "DynamoDB".
+  
 
-  #+CAPTION: AWS Console Home
-  #+NAME:   fig:aws-console-home
+  When you are ready for an adventure, follow these steps to set up a
+  URL shortening service in Amazon Web Services (AWS) using Lambda
+  functions and DynamoDB.  There are three layers to the
+  implementation: database, lambda, and gateway.  We build the
+  implementation one layer at a time.
+
+  We use DynamoDB for the database.  So, we need to create a DynamoDB
+  table. In order to do that, please log in to the AWS main console,
+  and search for "DynamoDB".
+
+  #+CAPTION: Search for DynamoDB
+  #+NAME:   fig:search-dynamodb
   [[./search-dynamo-db.png]]
 
+  Click on the DynamoDB service to open the DynamoDB dashboard. Next
+  click on the "Create table" button on the right-hand side of the
+  dashboard.  This opens the table creation page.  Feel free to name
+  the table anything you like, just make sure you remember what you
+  use. "url_map" is the suggested table name.  The other setting we
+  need to fill in is the partition key.  We will refer to the
+  partition key later, so make a note of it.  "url_hash" is the
+  suggested name for the partition key, since we will compute a hash
+  value from the long URL to use as the path part of the short URL.
 
-  Log in to the AWS Console, and search for "API Gateway" 
+  Scroll to the bottom of the create table page.  I suggest adding
+  some tags to assist in remembering what the table was created for in
+  the future.  Here are some examples of tags to add.
+
+  #+CAPTION: Tags Example
+  #+NAME:   fig:tags-example
+  [[./tags-examples.png]]
+
+
+  Log in to the AWS Console, and
+  search for "API Gateway"
 
   #+CAPTION: AWS Console Home
   #+NAME:   fig:aws-console-home
