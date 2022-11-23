@@ -45,6 +45,10 @@
   #+NAME:   fig:tags-example
   [[./tags-examples.png]]
 
+  When you are happy with your tags, and you may be happy with none at
+  all, click the "Create table" button at the bottom of the page.
+  This will create the table in DynamoDB, and return you to your
+  DynamoDB dashboard.
 
   Log in to the AWS Console, and
   search for "API Gateway"
@@ -63,4 +67,4 @@
   [[./console-home.png]]
 
   Click on the "Create API" button in the upper right-hand corner of
-  the page.   This will 
+  the page.   This will open the API creation page.
