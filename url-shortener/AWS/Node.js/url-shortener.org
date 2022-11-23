@@ -1,0 +1,7 @@
+* Url Shortener
+  Follow these steps to set up a URL shortening service in Amazon Web
+  Services (AWS) using Lambda functions and DynamoDB.
+
+  #+CAPTION: AWS Console Home
+  #+NAME:   fig:aws-console-home
+  [[./console-home.png]]
