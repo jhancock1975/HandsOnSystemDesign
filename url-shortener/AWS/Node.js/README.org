@@ -1,7 +1,33 @@
 * Url Shortener
   Follow these steps to set up a URL shortening service in Amazon Web
-  Services (AWS) using Lambda functions and DynamoDB.
+  Services (AWS) using Lambda functions and DynamoDB.  There are three
+  layers to the implementation.  We build the implementation one layer
+  at a time.
+
+  The first layer is the persistence, or database layer.  Here, we use
+  DynamoDB for the persistence layer.  So, we need to create a
+  DynamoDB table. In order to do that please log in to the AWS main
+  console, and search for "DynamoDB".
+
+  #+CAPTION: AWS Console Home
+  #+NAME:   fig:aws-console-home
+  [[./search-dynamo-db.png]]
+
+
+  Log in to the AWS Console, and search for "API Gateway" 
 
   #+CAPTION: AWS Console Home
   #+NAME:   fig:aws-console-home
   [[./console-home.png]]
+
+  Click on the "API Gateway" service that appears in the search
+  results.  This will open the API Gateway service overview page.
+  Yours will look a bit different depending on whether you have
+  created any APIs before.
+  
+  #+CAPTION: AWS API Gateway
+  #+NAME:   fig:aws-api-gateway-home
+  [[./console-home.png]]
+
+  Click on the "Create API" button in the upper right-hand corner of
+  the page.   This will 
