@@ -1,2 +1,28 @@
 * Paste Bin
 
+  Paste Bin is a web application.  The term "paste bin" is an instance
+  of the brand name for a thing becoming the common name, such as
+  Kleenex.  I use the term Paste Bin since I cannot think of a more
+  succinct way to name it - the best I can do is "get a link to some
+  free-form text machine" That is essentially what a Paste Bin is: one
+  copies and pastes some text into an on-line form, clicks submit, the
+  text is stored somewhere, and finally the user back a link to the
+  text.  When clicked, the link opens a page containing the stored text.
+
+  We thought of using Wasabi instead of S3, but noticed that Wasabi
+  has a minimum $6.00 a month fee for using their service.  $6.00 is
+  Wasabi's fee for storing one Terabyte per month, so it only makes
+  sense to use Wasabi if one has about a Terabyte of data to store. 
+
+  reference for accessing Wasabi s3 bucket from AWS
+  https://wasabi-support.zendesk.com/hc/en-us/articles/360047210891-How-do-I-use-AWS-Lambda-with-Wasabi-
+
+  create bucket in Wasabi
+
+  start creating a new role, create new policy from new role, make sure new policy grants read
+  and write access to wasabi s3 bucket
+
+  finish creating role, attach new policy, attach AWSLambdaBasicExecutionRole role for debugging
+
+  create lambda, choose custom role that was just created for 
+
