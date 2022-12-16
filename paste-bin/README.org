@@ -26,3 +26,25 @@
 
   create lambda, choose custom role that was just created for 
 
+* API Design
+  paths:
+    /pastes:
+      post:
+      summary: creates a paste
+
+      requestBody:
+      description: call this api to create a post
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - paste_time
+              - paste_content
+            properties:
+              paste_time:
+                type: number
+              paste_content
+                type: string
+

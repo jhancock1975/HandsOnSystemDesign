@@ -1,2 +1,5 @@
 *~
 .idea/
+# directory for scratch work
+scratch/
+.zip
